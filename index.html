@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Select Player's Team -->
+    <div id="team-selection">
+        <h2>Select Your Team</h2>
+        <div id="teams"></div>
+    </div>
+
+    <!-- Select Opponent Team -->
+    <div id="opponent-selection" class="hidden">
+        <h2>Select Opponent Team</h2>
+        <div id="opponents"></div>
+    </div>
+
+    <div id="match-info" class="hidden">
+        <h2 id="selected-teams"></h2>
+    </div>
+
+    <!-- Toss -->
+    <div id="toss-section" class="hidden">
+        <h2>Toss Time</h2>
+        <button onclick="toss('Heads')">Heads</button>
+        <button onclick="toss('Tails')">Tails</button>
+        <p id="toss-result"></p>
+    </div>
+
+    <!-- Bat or Ball Choice -->
+    <div id="bat-ball-choice" class="hidden">
+        <h2>Choose Bat or Ball</h2>
+        <button onclick="chooseBatBall('Bat')">Bat</button>
+        <button onclick="chooseBatBall('Ball')">Ball</button>
+    </div>
+
+    <!-- Overs Selection -->
+    <div id="overs-section" class="hidden">
+        <h2>Select Overs</h2>
+        <button onclick="selectOvers(1)">1 Over</button>
+        <button onclick="selectOvers(3)">3 Overs</button>
+        <button onclick="selectOvers(5)">5 Overs</button>
+        <button onclick="selectOvers(10)">10 Overs</button>
+    </div>
+
+    <!-- Game Play Section -->
+    <div id="gameplay-section" class="hidden">
+        <h2 id="batting-team"></h2>
+        <p id="target"></p>
+        <p>Score: <span id="score">0</span> | Wickets: <span id="wickets">0</span></p>
+        <p>Balls Left: <span id="balls-left"></span></p>
+
+        <div id="batting-controls">
+            <button onclick="playShot(1)">1 Run</button>
+            <button onclick="playShot(2)">2 Runs</button>
+            <button onclick="playShot(3)">3 Runs</button>
+            <button onclick="playShot(4)">4 Runs</button>
+            <button onclick="playShot(5)">5 Runs</button>
+            <button onclick="playShot(6)">6 Runs</button>
+        </div>
+    </div>
+    
+
+<p><strong>Run Rate:</strong> <span id="run-rate">0.00</span></p>
+
+<div id="winner-section" class="hidden">
+    <h2 id="winner-text"></h2>
+</div>
+
+    <h2 id="result" class="hidden"></h2>
+    <button id="restart-btn" class="hidden" onclick="restartGame()">Play Again</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
